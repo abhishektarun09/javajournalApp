@@ -8,8 +8,8 @@ import java.util.*;
 import java.util.HashMap;
 
 @RestController
-@RequestMapping("/journal")
-public class JournalEntryController {
+@RequestMapping("/journalv1")
+public class JournalEntryControllerV1 {
 
     private Map<Long, JournalEntry> journalEntries = new HashMap<>();
 
@@ -18,11 +18,11 @@ public class JournalEntryController {
         return new ArrayList<>(journalEntries.values());
     }
 
-    @PostMapping
-    public boolean createEntry(@RequestBody JournalEntry myEntry){
-        journalEntries.put(myEntry.getId(), myEntry);
-        return true;
-    }
+//    @PostMapping
+//    public boolean createEntry(@RequestBody JournalEntry myEntry){
+//        journalEntries.put(myEntry.getId(), myEntry);
+//        return true;
+//    }
 
     @GetMapping("id/{myId}")
     public JournalEntry getJournalEntryNyId(@PathVariable Long myId){
